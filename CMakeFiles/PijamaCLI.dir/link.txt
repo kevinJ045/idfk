@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/PijamaCLI.dir/src/main.cpp.o -o PijamaCLI  -lyaml-cpp 

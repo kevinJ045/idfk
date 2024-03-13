@@ -1,0 +1,39 @@
+---
+header:
+  name: Pijama
+  version: 0.0.1
+  stack:
+  - node
+  language: javascript/typescript
+  requirements:
+  - express
+exec:
+  node:
+    build: npm run build
+    start: npm run start
+version:
+  manager:
+  - git
+  onUpgrade:
+  - file: package.json
+    property: version
+  - command: pijama.command.node.publish
+  - command: pijama.command.git.push
+structure:
+  type: pijama.structure.javascript.typescript
+  root: "@/app"
+  assets: "@/assets"
+  ui: true
+  fileExtensions:
+  - ts
+tags:
+- feature: home
+  file: data/models/person.model.ts
+  tag:
+    type: info
+    title: Model Strict
+    content: "${file.line(40)-file.line(50)}"
+git:
+  branch: main
+  remote:
+    origin: https://github.com/someone/something
